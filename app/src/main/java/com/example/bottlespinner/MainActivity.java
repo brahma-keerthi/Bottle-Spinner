@@ -6,11 +6,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
 
     public void spin( View v ){
         ImageView image = (ImageView) findViewById(R.id.imageView);
-        image.animate().rotation((float) (Math.random() * 100000000.0f * Math.random() * 1000000000.0f));
+
+        Random random = new Random();
+        image.animate().rotation((float) (random.nextInt(100000)  * 1000000000.0f)).setDuration(3000);
 
     }
 
